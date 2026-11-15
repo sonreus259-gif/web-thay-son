@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { GraduationIcon } from "../lms/components/Icons";
+import "@/lib/demoApi"; // bản tĩnh (GitHub Pages): mô phỏng /api trong trình duyệt
 
 export default function LoginPage() {
   const router = useRouter();

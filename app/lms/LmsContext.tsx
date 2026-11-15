@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import "@/lib/demoApi"; // bản tĩnh (GitHub Pages): mô phỏng /api trong trình duyệt
 
 export type Role = "ADMIN" | "TEACHER" | "STUDENT";
 

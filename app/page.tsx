@@ -6,6 +6,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Character3D from "./components/Character3D";
 
+// Tiền tố đường dẫn khi web chạy dưới thư mục con (GitHub Pages)
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function Home() {
   const [isAudioEnabled, setIsAudioEnabled] = useState(false);
   const [isCoursesModalOpen, setIsCoursesModalOpen] = useState(false);
@@ -143,10 +146,10 @@ export default function Home() {
         <Image
           src={
             bgTheme === "twilight"
-              ? "/ai-bg-dream-twilight.jpg"
+              ? `${BASE_PATH}/ai-bg-dream-twilight.jpg`
               : bgTheme === "sunset"
-              ? "/ai-bg-dream-sunset.jpg"
-              : "/ai-bg-core.jpg"
+              ? `${BASE_PATH}/ai-bg-dream-sunset.jpg`
+              : `${BASE_PATH}/ai-bg-core.jpg`
           }
           alt="Không gian AI và Dữ liệu Thầy Đỗ Trường Sơn"
           fill
@@ -329,7 +332,7 @@ export default function Home() {
       {/* 5. 3D CHARACTER PORTRAIT CONTAINER - ANCHORED FLUSH TO BOTTOM OF ENTIRE SCREEN */}
       <div className="absolute inset-x-0 bottom-0 top-0 z-20 flex items-end justify-center pointer-events-none overflow-hidden">
         <div className="relative w-full h-[88vh] sm:h-[92vh] md:h-[96vh] max-w-[1100px] flex items-end justify-center pointer-events-auto">
-          <Character3D modelUrl="/realistic-man.glb" bgTheme={bgTheme} />
+          <Character3D modelUrl={`${BASE_PATH}/realistic-man.glb`} bgTheme={bgTheme} />
         </div>
       </div>
 
